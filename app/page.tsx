@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Home() {
   return (
     <main>
@@ -5,19 +7,19 @@ export default function Home() {
       <header className="sticky top-0 bg-white shadow-sm z-50">
         <div className="container mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center">
-            <a href="#" className="font-['Pacifico'] text-primary text-2xl mr-10">logo</a>
+            <Link href="#" className="font-['Pacifico'] text-primary text-2xl mr-10">logo</Link>
             <nav className="hidden md:flex space-x-6">
-              <a href="/courses" className="text-gray-900 font-medium hover:text-primary">강의</a>
-              <a href="#" className="text-gray-900 font-medium hover:text-primary">시험</a>
-              <a href="#" className="text-gray-900 font-medium hover:text-primary">교재 Shop</a>
-              <a href="#" className="text-gray-900 font-medium hover:text-primary">이벤트</a>
-              <a href="#" className="text-gray-900 font-medium hover:text-primary">마이페이지</a>
+              <Link href="/courses" className="text-gray-900 font-medium hover:text-primary">강의</Link>
+              <Link href="#" className="text-gray-900 font-medium hover:text-primary">시험</Link>
+              <Link href="#" className="text-gray-900 font-medium hover:text-primary">교재 Shop</Link>
+              <Link href="#" className="text-gray-900 font-medium hover:text-primary">이벤트</Link>
+              <Link href="#" className="text-gray-900 font-medium hover:text-primary">마이페이지</Link>
             </nav>
           </div>
           <div className="flex items-center space-x-4">
-            <a href="#" className="text-gray-700 hover:text-gray-900 font-medium">로그인</a>
-            <a href="#" className="text-gray-700 hover:text-gray-900 font-medium">회원가입</a>
-            <a href="#" className="bg-primary text-white px-4 py-2 rounded-button whitespace-nowrap font-medium hover:bg-opacity-90 transition-colors">구독 시작하기</a>
+            <Link href="#" className="text-gray-700 hover:text-gray-900 font-medium">로그인</Link>
+            <Link href="#" className="text-gray-700 hover:text-gray-900 font-medium">회원가입</Link>
+            <Link href="#" className="bg-primary text-white px-4 py-2 rounded-button whitespace-nowrap font-medium hover:bg-opacity-90 transition-colors">구독 시작하기</Link>
           </div>
         </div>
       </header>
@@ -30,8 +32,8 @@ export default function Home() {
               <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">한자 마스터로 <br />실력을 키우세요</h1>
               <p className="text-lg md:text-xl text-gray-700 mb-6">광고 없이 무제한으로 한자 강의를 시청하고<br />시험 대비부터 취업까지 한자 실력을 완성하세요.</p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <a href="#" className="bg-primary text-white px-6 py-3 rounded-button whitespace-nowrap font-medium hover:bg-opacity-90 transition-colors text-center">7일 무료 체험 시작하기</a>
-                <a href="#" className="border border-gray-300 text-gray-700 px-6 py-3 rounded-button whitespace-nowrap font-medium hover:bg-gray-50 transition-colors text-center">무료 강의 둘러보기</a>
+                <Link href="#" className="bg-primary text-white px-6 py-3 rounded-button whitespace-nowrap font-medium hover:bg-opacity-90 transition-colors text-center">7일 무료 체험 시작하기</Link>
+                <Link href="#" className="border border-gray-300 text-gray-700 px-6 py-3 rounded-button whitespace-nowrap font-medium hover:bg-gray-50 transition-colors text-center">무료 강의 둘러보기</Link>
               </div>
               <p className="text-gray-600 flex items-center">
                 <span className="w-6 h-6 flex items-center justify-center mr-2">
@@ -96,7 +98,7 @@ export default function Home() {
                     <span className="text-sm text-gray-700">2,345명</span>
                   </div>
                 </div>
-                <a href="#" className="block w-full bg-primary text-white text-center py-2 rounded-button whitespace-nowrap font-medium hover:bg-opacity-90 transition-colors">무료 수강하기</a>
+                <Link href="#" className="block w-full bg-primary text-white text-center py-2 rounded-button whitespace-nowrap font-medium hover:bg-opacity-90 transition-colors">무료 수강하기</Link>
               </div>
             </div>
             {/* Course 2 */}
@@ -124,7 +126,7 @@ export default function Home() {
                     <span className="text-sm text-gray-700">1,876명</span>
                   </div>
                 </div>
-                <a href="#" className="block w-full bg-primary text-white text-center py-2 rounded-button whitespace-nowrap font-medium hover:bg-opacity-90 transition-colors">구독하고 보기</a>
+                <Link href="#" className="block w-full bg-primary text-white text-center py-2 rounded-button whitespace-nowrap font-medium hover:bg-opacity-90 transition-colors">구독하고 보기</Link>
               </div>
             </div>
             {/* Course 3 */}
@@ -152,17 +154,17 @@ export default function Home() {
                     <span className="text-sm text-gray-700">3,210명</span>
                   </div>
                 </div>
-                <a href="#" className="block w-full bg-primary text-white text-center py-2 rounded-button whitespace-nowrap font-medium hover:bg-opacity-90 transition-colors">구독하고 보기</a>
+                <Link href="#" className="block w-full bg-primary text-white text-center py-2 rounded-button whitespace-nowrap font-medium hover:bg-opacity-90 transition-colors">구독하고 보기</Link>
               </div>
             </div>
           </div>
           <div className="text-center mt-10">
-            <a href="#" className="inline-flex items-center text-primary font-medium hover:underline">
+            <Link href="#" className="inline-flex items-center text-primary font-medium hover:underline">
               더 많은 강의 보기
               <div className="w-5 h-5 flex items-center justify-center ml-1">
                 <i className="ri-arrow-right-line" />
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
