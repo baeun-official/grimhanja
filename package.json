@@ -1,0 +1,23 @@
+{
+  "name": "grimhanja",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/baeun-official/grimhanja#readme",
+  "bugs": {
+    "url": "https://github.com/baeun-official/grimhanja/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baeun-official/grimhanja.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gcloud config set project grimhanja && gcloud app deploy",
+    "build": "cd client && npm install && npm run build && cd .. && cd server && npm install",
+    "server": "cd server && npm run start",
+    "start": "npm run server"
+  }
+}

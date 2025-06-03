@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그림한자 - 그림으로 쉽게 배우는 한자</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#FF6B6B', secondary: '#4ECDC4' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        .hero-section {
+            background-image: url('https://readdy.ai/api/search-image?query=colorful%2520illustration%2520of%2520children%2520learning%2520Chinese%2520characters%2520with%2520picture%2520association%2520method%2C%2520bright%2520and%2520cheerful%2520atmosphere%2C%2520educational%2520setting%2520with%2520cartoon%2520style%2520books%2520and%2520Chinese%2520characters%2520transformed%2520into%2520pictures%2C%2520soft%2520pastel%2520colors%2C%2520clean%2520background&width=1920&height=1080&seq=1&orientation=landscape');
+            background-size: cover;
+            background-position: right center;
+        }
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .custom-checkbox {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .custom-checkbox:checked {
+            background-color: #FF6B6B;
+            border-color: #FF6B6B;
+        }
+
+        .custom-checkbox:checked::after {
+            content: '';
+            position: absolute;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            top: 2px;
+            left: 6px;
+            transform: rotate(45deg);
+        }
+
+        .tab-active {
+            color: #FF6B6B;
+            border-bottom: 2px solid #FF6B6B;
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+    <!-- 상단 유틸리티 메뉴 -->
+    <div class="bg-gray-50 py-2">
+        <div class="container mx-auto px-4 flex justify-end items-center text-sm">
+            <a href="#" class="text-gray-600 hover:text-primary mr-6">로그인</a>
+            <a href="#" class="text-gray-600 hover:text-primary mr-6">회원가입</a>
+            <a href="#" class="text-gray-600 hover:text-primary">고객센터</a>
+        </div>
+    </div>
+    <!-- 메인 헤더 -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="#" class="flex items-center">
+                    <span class="text-2xl font-bold">그림한자</span>
+                </a>
+                <nav class="hidden lg:flex">
+                    <ul class="flex space-x-8">
+                        <li><a href="#" class="font-medium text-gray-800 hover:text-primary py-2">홈</a></li>
+                        <li><a href="#" class="font-medium text-gray-800 hover:text-primary py-2">강의</a></li>
+                        <li><a href="#" class="font-medium text-gray-800 hover:text-primary py-2">성독 프로그램</a></li>
+                        <li><a href="#" class="font-medium text-gray-800 hover:text-primary py-2">학습 자료</a></li>
+                        <li><a href="#" class="font-medium text-gray-800 hover:text-primary py-2">커뮤니티</a></li>
+                        <li><a href="#" class="font-medium text-gray-800 hover:text-primary py-2">블로그</a></li>
+                    </ul>
+                </nav>
+                <div class="flex items-center">
+                    <div class="hidden md:flex items-center mr-4 relative">
+                        <input type="text" placeholder="검색어를 입력하세요"
+                            class="pl-10 pr-4 py-2 border border-gray-200 rounded-full text-sm w-64 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        <div
+                            class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400">
+                            <i class="ri-search-line"></i>
+                        </div>
+                    </div>
+                    <button class="lg:hidden w-10 h-10 flex items-center justify-center">
+                        <i class="ri-menu-line text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- 히어로 섹션 -->
+    <section class="hero-section relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent"></div>
+        <div class="container mx-auto px-4 py-20 lg:py-32 relative z-10">
+            <div class="w-full max-w-2xl">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">그림으로 쉽게 배우는 한자</h1>
+                <p class="text-xl md:text-2xl text-gray-700 mb-8">어린이가 그림과 성독(리듬 학습)을 통해 재미있게 한자를 배울 수 있는 교육 플랫폼입니다.</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#"
+                        class="bg-primary text-white px-8 py-3 rounded-button font-medium shadow-lg hover:bg-opacity-90 transition whitespace-nowrap">무료
+                        체험하기</a>
+                    <a href="#"
+                        class="bg-white text-primary border border-primary px-8 py-3 rounded-button font-medium hover:bg-gray-50 transition whitespace-nowrap">더
+                        알아보기</a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div class="w-10 h-10 flex items-center justify-center text-gray-500">
+                <i class="ri-arrow-down-line text-2xl"></i>
+            </div>
+        </div>
+    </section>
+    <!-- 핵심 서비스 소개 -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">그림한자만의 특별한 학습 방법</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">그림과 성독을 통해 어린이들이 쉽고 재미있게 한자를 배울 수 있도록 설계된 교육 프로그램입니다.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="ri-image-line text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">그림 학습</h3>
+                    <p class="text-gray-600 text-center">한자의 모양을 쉽게 기억할 수 있는 그림과 연결하여 학습합니다. 시각적 기억력을 활용해 오래 기억할 수 있습니다.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="ri-volume-up-line text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">성독 학습</h3>
+                    <p class="text-gray-600 text-center">리듬에 맞춰 한자를 읽고 외우는 성독 학습법으로 청각적 기억력을 높이고 학습 효과를 극대화합니다.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="ri-stack-line text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">단계별 학습</h3>
+                    <p class="text-gray-600 text-center">초급부터 고급까지 체계적인 단계별 학습 과정으로 어린이의 수준에 맞게 한자를 배울 수 있습니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 성독 프로그램 소개 -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl font-bold mb-6">듣고 따라하는 성독 프로그램</h2>
+                    <p class="text-gray-600 mb-6">성독(聲讀)은 소리 내어 읽는 학습법으로, 리듬과 함께 한자를 배우는 효과적인 방법입니다. 어린이들이 재미있게 한자를 익힐 수
+                        있도록 도와줍니다.</p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary mr-3 mt-0.5">
+                                <i class="ri-check-line"></i>
+                            </div>
+                            <span class="text-gray-700">리듬에 맞춰 반복하며 자연스럽게 기억</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary mr-3 mt-0.5">
+                                <i class="ri-check-line"></i>
+                            </div>
+                            <span class="text-gray-700">청각적 기억력 향상 및 발음 교정 효과</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary mr-3 mt-0.5">
+                                <i class="ri-check-line"></i>
+                            </div>
+                            <span class="text-gray-700">그룹 활동을 통한 즐거운 학습 경험</span>
+                        </li>
+                    </ul>
+                    <a href="#"
+                        class="inline-block bg-primary text-white px-8 py-3 rounded-button font-medium shadow-lg hover:bg-opacity-90 transition whitespace-nowrap">성독
+                        체험하기</a>
+                </div>
+                <div class="lg:w-1/2 rounded-lg overflow-hidden shadow-lg">
+                    <div class="aspect-w-16 aspect-h-9 relative">
+                        <img src="https://readdy.ai/api/search-image?query=Korean%2520children%2520in%2520classroom%2520learning%2520Chinese%2520characters%2520with%2520teacher%2C%2520educational%2520setting%2C%2520bright%2520classroom%2520with%2520colorful%2520learning%2520materials%2C%2520children%2520raising%2520hands%2C%2520teacher%2520pointing%2520to%2520Chinese%2520characters%2520on%2520board%2C%2520joyful%2520learning%2520atmosphere&width=800&height=450&seq=3&orientation=landscape"
+                            alt="성독 프로그램" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30">
+                            <button class="w-16 h-16 flex items-center justify-center bg-white rounded-full shadow-lg">
+                                <i class="ri-play-fill text-primary text-2xl"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 강의 프로그램 -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">레벨별 한자 학습 프로그램</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">어린이의 수준과 목적에 맞는 다양한 한자 학습 프로그램을 제공합니다.</p>
+            </div>
+            <!-- 탭 메뉴 -->
+            <div class="flex justify-center mb-8">
+                <div class="inline-flex rounded-full bg-gray-100 p-1">
+                    <button
+                        class="px-6 py-2 rounded-full bg-primary text-white font-medium whitespace-nowrap !rounded-button">초급</button>
+                    <button
+                        class="px-6 py-2 rounded-full text-gray-700 font-medium hover:bg-gray-200 whitespace-nowrap !rounded-button">중급</button>
+                    <button
+                        class="px-6 py-2 rounded-full text-gray-700 font-medium hover:bg-gray-200 whitespace-nowrap !rounded-button">고급</button>
+                </div>
+            </div>
+            <!-- 필터 -->
+            <div class="flex flex-wrap justify-center gap-3 mb-8">
+                <span class="text-gray-500 mr-2">필터:</span>
+                <button
+                    class="px-4 py-1 bg-primary/10 text-primary rounded-full text-sm whitespace-nowrap !rounded-button">상형자</button>
+                <button
+                    class="px-4 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 whitespace-nowrap !rounded-button">생활
+                    한자</button>
+                <button
+                    class="px-4 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 whitespace-nowrap !rounded-button">시험
+                    대비</button>
+            </div>
+            <!-- 강의 카드 -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                    <div class="relative">
+                        <img src="https://readdy.ai/api/search-image?query=colorful%2520illustration%2520of%2520basic%2520Chinese%2520characters%2520with%2520picture%2520associations%2C%2520educational%2520content%2520for%2520children%2C%2520simple%2520characters%2520with%2520corresponding%2520images%2C%2520clean%2520background%2C%2520organized%2520layout%2C%2520bright%2520colors&width=600&height=400&seq=4&orientation=landscape"
+                            alt="초급 한자 기초" class="w-full h-48 object-cover object-top">
+                        <div class="absolute top-3 left-3 bg-primary text-white text-xs px-2 py-1 rounded">인기</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">초급 한자 기초: 상형자 50자</h3>
+                        <p class="text-gray-600 mb-4">그림으로 쉽게 배우는 기초 상형자 50자를 학습합니다. 한자의 기원과 의미를 재미있게 익힐 수 있습니다.</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-yellow-500 mr-1">
+                                    <i class="ri-star-fill"></i>
+                                </div>
+                                <span class="text-gray-700">4.9</span>
+                                <span class="text-gray-500 text-sm ml-1">(128)</span>
+                            </div>
+                            <span class="text-gray-700 font-medium">8주 과정</span>
+                        </div>
+                        <a href="#"
+                            class="block w-full bg-primary text-white text-center py-2 rounded-button font-medium hover:bg-opacity-90 transition whitespace-nowrap">수강
+                            신청</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                    <div class="relative">
+                        <img src="https://readdy.ai/api/search-image?query=colorful%2520illustration%2520of%2520daily%2520life%2520Chinese%2520characters%2520with%2520picture%2520associations%2C%2520educational%2520content%2520for%2520children%2C%2520characters%2520related%2520to%2520everyday%2520objects%2520and%2520activities%2C%2520clean%2520background%2C%2520organized%2520layout%2C%2520bright%2520colors&width=600&height=400&seq=5&orientation=landscape"
+                            alt="생활 한자" class="w-full h-48 object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">초급 생활 한자: 일상생활 한자 30자</h3>
+                        <p class="text-gray-600 mb-4">일상생활에서 자주 사용되는 한자 30자를 학습합니다. 실생활에 바로 적용할 수 있는 한자를 배웁니다.</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-yellow-500 mr-1">
+                                    <i class="ri-star-fill"></i>
+                                </div>
+                                <span class="text-gray-700">4.8</span>
+                                <span class="text-gray-500 text-sm ml-1">(96)</span>
+                            </div>
+                            <span class="text-gray-700 font-medium">6주 과정</span>
+                        </div>
+                        <a href="#"
+                            class="block w-full bg-primary text-white text-center py-2 rounded-button font-medium hover:bg-opacity-90 transition whitespace-nowrap">수강
+                            신청</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                    <div class="relative">
+                        <img src="https://readdy.ai/api/search-image?query=colorful%2520illustration%2520of%2520Chinese%2520characters%2520with%2520numbers%2520and%2520basic%2520concepts%2C%2520educational%2520content%2520for%2520children%2C%2520characters%2520related%2520to%2520numbers%2520and%2520counting%2C%2520clean%2520background%2C%2520organized%2520layout%2C%2520bright%2520colors&width=600&height=400&seq=6&orientation=landscape"
+                            alt="숫자 한자" class="w-full h-48 object-cover object-top">
+                        <div class="absolute top-3 left-3 bg-green-500 text-white text-xs px-2 py-1 rounded">신규</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">초급 숫자 한자: 1부터 100까지</h3>
+                        <p class="text-gray-600 mb-4">숫자와 관련된 한자를 1부터 100까지 학습합니다. 기본 숫자 표현과 활용법을 배웁니다.</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-yellow-500 mr-1">
+                                    <i class="ri-star-fill"></i>
+                                </div>
+                                <span class="text-gray-700">4.7</span>
+                                <span class="text-gray-500 text-sm ml-1">(64)</span>
+                            </div>
+                            <span class="text-gray-700 font-medium">4주 과정</span>
+                        </div>
+                        <a href="#"
+                            class="block w-full bg-primary text-white text-center py-2 rounded-button font-medium hover:bg-opacity-90 transition whitespace-nowrap">수강
+                            신청</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-10">
+                <a href="#"
+                    class="inline-block border border-gray-300 text-gray-700 px-6 py-3 rounded-button font-medium hover:bg-gray-50 transition whitespace-nowrap">모든
+                    강의 보기</a>
+            </div>
+        </div>
+    </section>
+    <!-- 학습 자료 -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">다양한 학습 자료</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">그림 카드, 플래시 카드, 인터랙티브 퀴즈 등 다양한 학습 자료로 한자 학습을 더욱 효과적으로 할 수
+                    있습니다.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                    <img src="https://readdy.ai/api/search-image?query=colorful%2520flash%2520cards%2520with%2520Chinese%2520characters%2520and%2520corresponding%2520images%2C%2520educational%2520materials%2520for%2520children%2C%2520clean%2520design%2C%2520bright%2520colors%2C%2520organized%2520layout%2520of%2520multiple%2520cards&width=400&height=300&seq=7&orientation=landscape"
+                        alt="그림 플래시 카드" class="w-full h-40 object-cover object-top">
+                    <div class="p-4">
+                        <h3 class="font-semibold mb-2">그림 플래시 카드</h3>
+                        <p class="text-gray-600 text-sm mb-3">한자와 그림이 함께 있는 플래시 카드로 시각적 기억력을 높입니다.</p>
+                        <a href="#" class="text-primary font-medium text-sm flex items-center">
+                            <span>자세히 보기</span>
+                            <div class="w-4 h-4 flex items-center justify-center ml-1">
+                                <i class="ri-arrow-right-line"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                    <img src="https://readdy.ai/api/search-image?query=interactive%2520quiz%2520game%2520for%2520learning%2520Chinese%2520characters%2C%2520colorful%2520digital%2520interface%2520on%2520tablet%2C%2520educational%2520app%2520for%2520children%2C%2520game-like%2520elements%2C%2520bright%2520colors%2C%2520clean%2520design&width=400&height=300&seq=8&orientation=landscape"
+                        alt="인터랙티브 퀴즈" class="w-full h-40 object-cover object-top">
+                    <div class="p-4">
+                        <h3 class="font-semibold mb-2">인터랙티브 퀴즈</h3>
+                        <p class="text-gray-600 text-sm mb-3">재미있는 퀴즈 게임으로 배운 한자를 복습하고 테스트합니다.</p>
+                        <a href="#" class="text-primary font-medium text-sm flex items-center">
+                            <span>자세히 보기</span>
+                            <div class="w-4 h-4 flex items-center justify-center ml-1">
+                                <i class="ri-arrow-right-line"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                    <img src="https://readdy.ai/api/search-image?query=Chinese%2520character%2520writing%2520practice%2520sheets%2C%2520printable%2520worksheets%2520with%2520grid%2520lines%2C%2520educational%2520materials%2520for%2520children%2C%2520clean%2520design%2C%2520organized%2520layout%2C%2520example%2520characters%2520with%2520stroke%2520order&width=400&height=300&seq=9&orientation=landscape"
+                        alt="쓰기 연습장" class="w-full h-40 object-cover object-top">
+                    <div class="p-4">
+                        <h3 class="font-semibold mb-2">쓰기 연습장</h3>
+                        <p class="text-gray-600 text-sm mb-3">한자 쓰기 연습을 위한 다운로드 가능한 학습지입니다.</p>
+                        <a href="#" class="text-primary font-medium text-sm flex items-center">
+                            <span>자세히 보기</span>
+                            <div class="w-4 h-4 flex items-center justify-center ml-1">
+                                <i class="ri-arrow-right-line"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                    <img src="https://readdy.ai/api/search-image?query=Chinese%2520character%2520memory%2520game%2520cards%2C%2520matching%2520game%2520with%2520characters%2520and%2520images%2C%2520educational%2520materials%2520for%2520children%2C%2520clean%2520design%2C%2520bright%2520colors%2C%2520organized%2520layout%2520of%2520game%2520pieces&width=400&height=300&seq=10&orientation=landscape"
+                        alt="한자 메모리 게임" class="w-full h-40 object-cover object-top">
+                    <div class="p-4">
+                        <h3 class="font-semibold mb-2">한자 메모리 게임</h3>
+                        <p class="text-gray-600 text-sm mb-3">한자와 그림을 매칭하는 게임으로 재미있게 학습합니다.</p>
+                        <a href="#" class="text-primary font-medium text-sm flex items-center">
+                            <span>자세히 보기</span>
+                            <div class="w-4 h-4 flex items-center justify-center ml-1">
+                                <i class="ri-arrow-right-line"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-10">
+                <a href="#"
+                    class="inline-block border border-gray-300 text-gray-700 px-6 py-3 rounded-button font-medium hover:bg-gray-50 transition whitespace-nowrap">모든
+                    학습 자료 보기</a>
+            </div>
+        </div>
+    </section>
+    <!-- 커뮤니티/후기 -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">학부모와 아이들의 생생한 후기</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">그림한자를 통해 한자 학습에 성공한 많은 학부모와 아이들의 이야기를 들어보세요.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-4">
+                            <img src="https://readdy.ai/api/search-image?query=profile%2520photo%2520of%2520Korean%2520mother%2C%2520simple%2520portrait%2C%2520neutral%2520expression%2C%2520clean%2520background&width=100&height=100&seq=11&orientation=squarish"
+                                alt="김지영 학부모" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-medium">김지영 학부모</h4>
+                            <div class="flex text-yellow-500">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"아이가 한자에 전혀 관심이 없었는데, 그림한자의 성독 프로그램을 시작하고 나서는 매일 스스로 학습하고 있어요. 그림으로 배우니 훨씬
+                        기억하기 쉽다고 합니다. 3개월 만에 기초 한자 50자를 완벽하게 익혔어요!"</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-4">
+                            <img src="https://readdy.ai/api/search-image?query=profile%2520photo%2520of%2520Korean%2520father%2C%2520simple%2520portrait%2C%2520neutral%2520expression%2C%2520clean%2520background&width=100&height=100&seq=12&orientation=squarish"
+                                alt="박준호 학부모" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-medium">박준호 학부모</h4>
+                            <div class="flex text-yellow-500">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"초등학교 1학년 아들이 한자 시험에서 항상 좋은 성적을 받고 있어요. 그림한자의 학습 방법이 정말 효과적입니다. 특히 플래시 카드와
+                        쓰기 연습장을 활용한 복습이 큰 도움이 되었습니다. 다른 학부모들에게도 적극 추천하고 있어요."</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-4">
+                            <img src="https://readdy.ai/api/search-image?query=profile%2520photo%2520of%2520Korean%2520elementary%2520school%2520teacher%2C%2520simple%2520portrait%2C%2520neutral%2520expression%2C%2520clean%2520background&width=100&height=100&seq=13&orientation=squarish"
+                                alt="이수진 선생님" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-medium">이수진 선생님</h4>
+                            <div class="flex text-yellow-500">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"초등학교 교사로서 그림한자 프로그램을 수업에 활용하고 있습니다. 아이들이 한자를 배우는 속도가 놀라울 정도로 빨라졌고, 무엇보다
+                        즐겁게 참여합니다. 성독 학습법은 특히 집중력이 부족한 아이들에게도 효과적이에요."</p>
+                </div>
+            </div>
+            <div class="mt-16">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold mb-4">그림한자 챌린지에 참여하세요</h3>
+                    <p class="text-gray-600 max-w-3xl mx-auto">매월 진행되는 그림한자 챌린지에 참여하고 다양한 상품과 혜택을 받아보세요.</p>
+                </div>
+                <div class="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-lg p-8 text-center">
+                    <h4 class="text-xl font-semibold mb-4">6월 그림한자 챌린지</h4>
+                    <p class="text-gray-700 mb-6">30일 동안 매일 3개의 한자를 학습하고 인증하면 특별 학습 키트를 드립니다.</p>
+                    <a href="#"
+                        class="inline-block bg-primary text-white px-8 py-3 rounded-button font-medium shadow-lg hover:bg-opacity-90 transition whitespace-nowrap">챌린지
+                        참여하기</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 뉴스레터 구독 -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4">한자 학습 팁과 최신 소식 받기</h2>
+                <p class="text-gray-600 mb-8">그림한자의 뉴스레터를 구독하고 한자 학습 팁, 새로운 강의 소식, 특별 할인 정보를 받아보세요.</p>
+                <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                    <input type="email" placeholder="이메일 주소를 입력하세요"
+                        class="flex-1 px-4 py-3 border border-gray-300 rounded-button focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                    <button type="submit"
+                        class="bg-primary text-white px-6 py-3 rounded-button font-medium shadow-lg hover:bg-opacity-90 transition whitespace-nowrap">구독하기</button>
+                </form>
+                <p class="text-gray-500 text-sm mt-4">* 개인정보 처리방침에 동의하시는 분만 구독해주세요.</p>
+            </div>
+        </div>
+    </section>
+    <!-- 푸터 -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <a href="#" class="flex items-center mb-4">
+                        <span class="text-xl font-bold">그림한자</span>
+                    </a>
+                    <p class="text-gray-400 mb-4">그림으로 쉽게 배우는 한자</p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-8 h-8 flex items-center justify-center bg-gray-700 rounded-full hover:bg-primary transition">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#"
+                            class="w-8 h-8 flex items-center justify-center bg-gray-700 rounded-full hover:bg-primary transition">
+                            <i class="ri-youtube-line"></i>
+                        </a>
+                        <a href="#"
+                            class="w-8 h-8 flex items-center justify-center bg-gray-700 rounded-full hover:bg-primary transition">
+                            <i class="ri-kakao-talk-fill"></i>
+                        </a>
+                        <a href="#"
+                            class="w-8 h-8 flex items-center justify-center bg-gray-700 rounded-full hover:bg-primary transition">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">학습 프로그램</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">초급 과정</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">중급 과정</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">고급 과정</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">성독 프로그램</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">학습 자료</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">고객 지원</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">자주 묻는 질문</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">문의하기</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">결제 및 환불</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">이용약관</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">개인정보처리방침</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">연락처</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-2 mt-0.5">
+                                <i class="ri-map-pin-line"></i>
+                            </div>
+                            <span class="text-gray-400">서울특별시 강남구 테헤란로 123 그림한자빌딩 5층</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-2 mt-0.5">
+                                <i class="ri-phone-line"></i>
+                            </div>
+                            <span class="text-gray-400">02-123-4567</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-2 mt-0.5">
+                                <i class="ri-mail-line"></i>
+                            </div>
+                            <span class="text-gray-400">info@geumhanja.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-2 mt-0.5">
+                                <i class="ri-time-line"></i>
+                            </div>
+                            <span class="text-gray-400">평일 09:00 - 18:00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 그림한자. All rights reserved.</p>
+                <div class="flex space-x-4">
+                    <div class="w-8 h-5 flex items-center justify-center">
+                        <i class="ri-visa-fill text-xl"></i>
+                    </div>
+                    <div class="w-8 h-5 flex items-center justify-center">
+                        <i class="ri-mastercard-fill text-xl"></i>
+                    </div>
+                    <div class="w-8 h-5 flex items-center justify-center">
+                        <i class="ri-paypal-fill text-xl"></i>
+                    </div>
+                    <div class="w-8 h-5 flex items-center justify-center">
+                        <i class="ri-alipay-fill text-xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script id="navToggle">
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuButton = document.querySelector('.ri-menu-line').parentElement;
+            const nav = document.querySelector('nav');
+            menuButton.addEventListener('click', function () {
+                nav.classList.toggle('hidden');
+            });
+        });
+    </script>
+    <script id="tabSwitcher">
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabButtons = document.querySelectorAll('.rounded-full.bg-gray-100.p-1 button');
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    // Remove active class from all buttons
+                    tabButtons.forEach(btn => {
+                        btn.classList.remove('bg-primary', 'text-white');
+                        btn.classList.add('text-gray-700', 'hover:bg-gray-200');
+                    });
+                    // Add active class to clicked button
+                    this.classList.add('bg-primary', 'text-white');
+                    this.classList.remove('text-gray-700', 'hover:bg-gray-200');
+                });
+            });
+        });
+    </script>
+    <script id="filterButtons">
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterButtons = document.querySelectorAll('.px-4.py-1.rounded-full.text-sm');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    // Toggle active state
+                    if (this.classList.contains('bg-primary/10')) {
+                        this.classList.remove('bg-primary/10', 'text-primary');
+                        this.classList.add('bg-gray-100', 'text-gray-700', 'hover:bg-gray-200');
+                    } else {
+                        // Remove active class from all buttons
+                        filterButtons.forEach(btn => {
+                            if (btn.classList.contains('bg-primary/10')) {
+                                btn.classList.remove('bg-primary/10', 'text-primary');
+                                btn.classList.add('bg-gray-100', 'text-gray-700', 'hover:bg-gray-200');
+                            }
+                        });
+                        // Add active class to clicked button
+                        this.classList.remove('bg-gray-100', 'text-gray-700', 'hover:bg-gray-200');
+                        this.classList.add('bg-primary/10', 'text-primary');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
